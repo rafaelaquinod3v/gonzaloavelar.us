@@ -1,16 +1,25 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { ui } from '../i18n/ui';
+
 // Replace 000000000000 with the real international number (digits only, no '+').
 export const WHATSAPP_NUMBER = import.meta.env.PUBLIC_WHATSAPP_NUMBER ?? '000000000000';
-export const WHATSAPP_MESSAGE =
-  'Hello, Lic. Avelar. I saw your website and I would like to receive information about your consultations/conferences. I want to shift to an active position.';
-export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+
+export function getWhatsAppUrl(lang: keyof typeof ui) {
+  const message = ui[lang]['whatsapp.message'] || ui['en']['whatsapp.message'];
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const WHATSAPP_URL = getWhatsAppUrl(lang);
 ---
 
 <a
   href={WHATSAPP_URL}
   target="_blank"
   rel="noopener noreferrer"
-  aria-label="Chat with Lic. Gonzalo Avelar on WhatsApp"
+  aria-label={t('whatsapp.aria_label')}
   class="fixed bottom-6 right-6 z-50 inline-flex items-center justify-center h-14 w-14 rounded-full bg-accent text-paper shadow-lg shadow-black/20 hover:scale-105 transition-transform focus-visible:ring-4 focus-visible:ring-ink/20"
 >
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-7 w-7" aria-hidden="true">

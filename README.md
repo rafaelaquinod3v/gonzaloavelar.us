@@ -1,24 +1,23 @@
-# Gonzalo Avelar — Landing Page
+🛡️ Gonzalo Avelar - Sovereign Landing Page
 
-Minimalist, high-contrast, accessible landing page built with **Astro** and **Tailwind CSS**.
+Este proyecto es la landing page oficial de Gonzalo Avelar. Representa el punto de entrada para su ecosistema digital y sistema de publicación.
 
-## Run locally
+🏗️ Arquitectura y Stack Tecnológico
+Desarrollado con la metodología 1000x Solo Architect Stack.
+Framework: 🚀 Astro para un rendimiento ultrarrápido.
+Prototipado: 🎨 Lovable para la generación rápida de la interfaz.
+Auditoría: 🤖 Google Jules para endurecimiento de la lógica y seguridad.
+i18n: 🌐 Soporte nativo para inglés y español (/es/).
+Accesibilidad: ♿ Estándar WCAG 2.1 AA para lectura de pantalla.
+Despliegue: ☁️ Cloudflare Pages con protección DDoS y SSL gratuito.
 
-```bash
-npm install
-npm run dev
-```
+💎 Características Clave
+Diseño: 🎯 Minimalista con fuerte jerarquía tipográfica.
+Soberanía: 🔒 WhatsApp Business protegido mediante variables .env.
+Rendimiento: 📈 Fuentes autoalojadas para puntajes perfectos en Core Web Vitals.
 
-Then open http://localhost:4321
-
-## Configure WhatsApp
-
-Open `src/components/WhatsApp.astro` and replace the placeholder number
-`000000000000` with the real international number (digits only, no `+`).
-
-## Structure
-
-- `src/pages/index.astro` — main landing page
-- `src/components/` — Header, Hero, About, Services, CTA, Footer, WhatsApp
-- `src/layouts/Base.astro` — base HTML layout with SEO meta
-- `src/assets/gonzalo.jpg` — portrait image
+💻 Comandos de Desarrollo
+Necesitas tener Node.js instalado en tu máquina.
+Instalar dependencias: npm install
+Servidor de desarrollo: npm run dev
+Construir para producción: npm run build

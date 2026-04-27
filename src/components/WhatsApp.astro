@@ -1,6 +1,6 @@
 ---
 // Replace 000000000000 with the real international number (digits only, no '+').
-export const WHATSAPP_NUMBER = '000000000000';
+export const WHATSAPP_NUMBER = import.meta.env.PUBLIC_WHATSAPP_NUMBER ?? '000000000000';
 export const WHATSAPP_MESSAGE =
   'Hello, Lic. Avelar. I saw your website and I would like to receive information about your consultations/conferences. I want to shift to an active position.';
 export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;

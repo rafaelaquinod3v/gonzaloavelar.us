@@ -1,14 +1,20 @@
 ---
+import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
 const links = [
-  { href: '#about', label: 'About' },
-  { href: '#services', label: 'Services' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#about', label: t('nav.about') },
+  { href: '#services', label: t('nav.services') },
+  { href: '#contact', label: t('nav.contact') },
 ];
 ---
 
 <header class="border-b border-ink/10 bg-paper">
   <div class="mx-auto max-w-6xl px-6 py-5 flex items-center justify-between">
-    <a href="/" class="text-lg font-serif font-medium tracking-tight">
+    <a href={translatePath('/')} class="text-lg font-serif font-medium tracking-tight">
       Lic. Gonzalo Avelar
     </a>
     <nav aria-label="Primary">

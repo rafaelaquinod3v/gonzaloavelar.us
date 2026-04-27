@@ -1,0 +1,26 @@
+---
+import { WHATSAPP_URL } from './WhatsApp.astro';
+---
+
+<section id="contact" class="bg-ink text-paper">
+  <div class="mx-auto max-w-3xl px-6 py-24 text-center">
+    <p class="text-xs uppercase tracking-[0.2em] text-paper/60 mb-6">Get in touch</p>
+    <h2 class="font-serif text-4xl md:text-5xl leading-tight">
+      Take the first step today.
+    </h2>
+    <p class="mt-6 text-lg text-paper/75 max-w-prose mx-auto">
+      Send a direct message and start your shift toward an active position.
+    </p>
+    <div class="mt-10">
+      <a
+        href={WHATSAPP_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-3 rounded-full bg-accent text-paper px-8 py-4 text-base font-medium hover:bg-accent/90 transition-colors focus-visible:ring-4 focus-visible:ring-paper/30"
+      >
+        <span aria-hidden="true">\ud83d\udfe2</span>
+        Chat now with Lic. Gonzalo Avelar
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  :focus-visible {
+    outline: 2px solid #0a0a0a;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  h1, h2, h3 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+}

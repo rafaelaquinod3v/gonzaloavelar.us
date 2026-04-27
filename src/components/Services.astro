@@ -1,0 +1,39 @@
+---
+const services = [
+  {
+    n: '01',
+    title: 'Existential Reorientation',
+    body: 'Overcome grief, depression, or emptiness through Logotherapy.',
+  },
+  {
+    n: '02',
+    title: 'Independence and Purpose',
+    body: 'Workshops for entrepreneurs and companies on wealth mindset and resilience.',
+  },
+  {
+    n: '03',
+    title: 'Emotional Healing',
+    body: 'Conferences and relaxation therapies for a comprehensive balance.',
+  },
+];
+---
+
+<section id="services" class="border-b border-ink/10">
+  <div class="mx-auto max-w-6xl px-6 py-24">
+    <div class="max-w-2xl mb-16">
+      <p class="text-xs uppercase tracking-[0.2em] text-muted mb-6">Services</p>
+      <h2 class="font-serif text-4xl md:text-5xl leading-tight text-ink">
+        Three paths toward your own peak.
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-px bg-ink/10 border border-ink/10">
+      {services.map((s) => (
+        <article class="bg-paper p-10 flex flex-col gap-6 hover:bg-soft/60 transition-colors">
+          <span class="text-sm font-mono text-muted">{s.n}</span>
+          <h3 class="font-serif text-2xl text-ink leading-snug">{s.title}</h3>
+          <p class="text-ink/75 leading-relaxed">{s.body}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

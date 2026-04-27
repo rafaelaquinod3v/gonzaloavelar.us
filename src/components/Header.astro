@@ -1,5 +1,6 @@
 ---
 import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+import { languages } from '../i18n/ui';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -17,19 +18,38 @@ const links = [
     <a href={translatePath('/')} class="text-lg font-serif font-medium tracking-tight">
       Lic. Gonzalo Avelar
     </a>
-    <nav aria-label="Primary">
-      <ul class="flex items-center gap-8 text-sm">
-        {links.map((l) => (
-          <li>
+    <div class="flex items-center gap-8">
+      <nav aria-label="Primary">
+        <ul class="flex items-center gap-8 text-sm">
+          {links.map((l) => (
+            <li>
+              <a
+                href={l.href}
+                class="text-ink/70 hover:text-ink transition-colors underline-offset-4 hover:underline"
+              >
+                {l.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div class="flex items-center gap-3 border-l border-ink/10 pl-8" aria-label="Language selector">
+        {Object.entries(languages).map(([code, label], index) => (
+          <>
             <a
-              href={l.href}
-              class="text-ink/70 hover:text-ink transition-colors underline-offset-4 hover:underline"
+              href={translatePath('/', code)}
+              class={`text-[10px] font-bold uppercase tracking-[0.2em] transition-colors ${lang === code ? 'text-ink' : 'text-ink/40 hover:text-ink'}`}
+              aria-current={lang === code ? 'page' : undefined}
             >
-              {l.label}
+              {code}
             </a>
-          </li>
+            {index < Object.keys(languages).length - 1 && (
+              <span class="text-ink/10 text-[10px]" aria-hidden="true">|</span>
+            )}
+          </>
         ))}
-      </ul>
-    </nav>
+      </div>
+    </div>
   </div>
 </header>

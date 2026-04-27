@@ -1,4 +1,4 @@
-# Lic. Gonzalo Avelar — Landing Page
+# Gonzalo Avelar — Landing Page
 
 Minimalist, high-contrast, accessible landing page built with **Astro** and **Tailwind CSS**.
 

@@ -65,7 +65,7 @@ export const ui = {
     'cta.subtitle': 'Ponte en contacto',
     'cta.title': 'Da el primer paso hoy.',
     'cta.description': 'Envía un mensaje directo y comienza tu cambio hacia una posición activa.',
-    'cta.button': 'Chatea ahora con el Gonzalo Avelar',
+    'cta.button': 'Chatea ahora con Gonzalo Avelar',
     'footer.rights': 'Todos los derechos reservados.',
     'whatsapp.message': 'Hola, Lic. Avelar. Vi su sitio web y me gustaría recibir información sobre sus consultas/conferencias. Quiero cambiar a una posición activa.',
     'whatsapp.aria_label': 'Chatea con el Gonzalo Avelar por WhatsApp',

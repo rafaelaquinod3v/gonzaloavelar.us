@@ -27,5 +27,4 @@ Necesitas tener **Node.js** instalado en tu máquina.
 * **Servidor de desarrollo:** `npm run dev`
 * **Construir para producción:** `npm run build`
 
-
 ![Gritos de programador](/public/jim.png)

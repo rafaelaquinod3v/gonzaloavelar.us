@@ -28,3 +28,4 @@ Necesitas tener **Node.js** instalado en tu máquina.
 * **Construir para producción:** `npm run build`
 
 ![Gritos de programador](/public/jim.png)
+

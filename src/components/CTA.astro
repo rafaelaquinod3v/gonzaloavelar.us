@@ -1,15 +1,20 @@
 ---
-import { WHATSAPP_URL } from './WhatsApp.astro';
+import { getWhatsAppUrl } from './WhatsApp.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const WHATSAPP_URL = getWhatsAppUrl(lang);
 ---
 
 <section id="contact" class="bg-ink text-paper">
   <div class="mx-auto max-w-3xl px-6 py-24 text-center">
-    <p class="text-xs uppercase tracking-[0.2em] text-paper/60 mb-6">Get in touch</p>
+    <p class="text-xs uppercase tracking-[0.2em] text-paper/60 mb-6">{t('cta.subtitle')}</p>
     <h2 class="font-serif text-4xl md:text-5xl leading-tight">
-      Take the first step today.
+      {t('cta.title')}
     </h2>
     <p class="mt-6 text-lg text-paper/75 max-w-prose mx-auto">
-      Send a direct message and start your shift toward an active position.
+      {t('cta.description')}
     </p>
     <div class="mt-10">
       <a
@@ -19,7 +24,7 @@ import { WHATSAPP_URL } from './WhatsApp.astro';
         class="inline-flex items-center justify-center gap-3 rounded-full bg-accent text-paper px-8 py-4 text-base font-medium hover:bg-accent/90 transition-colors focus-visible:ring-4 focus-visible:ring-paper/30"
       >
         <span aria-hidden="true">🟢</span>
-        Chat now with Lic. Gonzalo Avelar
+        {t('cta.button')}
       </a>
     </div>
   </div>

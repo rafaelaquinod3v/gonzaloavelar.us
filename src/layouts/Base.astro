@@ -6,20 +6,24 @@ import '@fontsource/cormorant-garamond/600.css';
 import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 interface Props {
   title?: string;
   description?: string;
 }
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const {
-  title = 'Lic. Gonzalo Avelar — Human Behavior & Logotherapy',
-  description = 'Psychologist and speaker. Reclaim your dignity and autonomy through Logotherapy. You don’t need to see to be happy.',
+  title = t('base.title'),
+  description = t('base.description'),
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -39,7 +43,7 @@ const {
       href="#main"
       class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-ink focus:text-paper focus:px-4 focus:py-2 focus:rounded"
     >
-      Skip to main content
+      {t('base.skipLink')}
     </a>
     <slot />
   </body>

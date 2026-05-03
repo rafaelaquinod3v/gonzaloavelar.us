@@ -7,6 +7,7 @@ import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '@fontsource/inter/600.css';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import AnnouncementBar from '../components/AnnouncementBar.astro';
 
 interface Props {
   title?: string;
@@ -39,6 +40,7 @@ const {
     <title>{title}</title>
   </head>
   <body class="bg-paper text-ink antialiased font-sans selection:bg-ink selection:text-paper">
+    <AnnouncementBar />
     <a
       href="#main"
       class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-ink focus:text-paper focus:px-4 focus:py-2 focus:rounded"

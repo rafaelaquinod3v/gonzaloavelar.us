@@ -1,0 +1,59 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div id="announcement-bar" class="fixed top-0 left-0 w-full z-[60] bg-[#1A1A1A] text-white font-sans">
+  <div class="max-w-6xl mx-auto px-6 py-3 flex flex-col sm:flex-row items-center justify-center gap-4 relative">
+    <p class="text-center text-sm md:text-base font-medium pr-8 sm:pr-0">
+      <span class="hidden sm:inline">{t('announcement.text')}</span>
+      <span class="sm:hidden">{t('announcement.text_mobile')}</span>
+    </p>
+    <a
+      href="#contact"
+      class="text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 border border-white/30 hover:bg-white hover:text-black transition-colors rounded-full shrink-0"
+    >
+      {t('announcement.button')}
+    </a>
+    <button
+      id="close-announcement"
+      class="absolute right-4 top-4 sm:top-1/2 -translate-y-1/2 p-2 opacity-50 hover:opacity-100 transition-opacity"
+      aria-label="Close announcement"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  function updateBodyPadding() {
+    const bar = document.getElementById('announcement-bar');
+    if (bar) {
+      const height = bar.offsetHeight;
+      document.body.style.paddingTop = `${height}px`;
+    } else {
+      document.body.style.paddingTop = '0px';
+    }
+  }
+
+  // Update padding on mount
+  updateBodyPadding();
+
+  // Update padding on resize
+  window.addEventListener('resize', updateBodyPadding);
+
+  // Handle close
+  const closeBtn = document.getElementById('close-announcement');
+  closeBtn?.addEventListener('click', () => {
+    const bar = document.getElementById('announcement-bar');
+    if (bar) {
+      bar.remove();
+      updateBodyPadding();
+    }
+  });
+</script>

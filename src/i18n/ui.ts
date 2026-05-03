@@ -50,7 +50,7 @@ export const ui = {
     'nav.services': 'Servicios',
     'nav.contact': 'Contacto',
     'announcement.text': '¡Únete a la lista de espera! Programa: Tú eres el arquitecto de tu propia vida. 🏛️',
-    'announcement.text_mobile': 'Lista de espera: Tú eres el arquitecto de tu propia vida. 🏛️',
+    'announcement.text_mobile': 'Lista de espera: Sé el arquitecto de tu propia vida. 🏛️',
     'announcement.button': 'SABER MÁS',
     'hero.subtitle': 'Psicólogo · Conferencista · Logoterapeuta',
     'hero.title': 'Serás lo que<br />quieras ser.',

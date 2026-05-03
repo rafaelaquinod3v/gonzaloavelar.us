@@ -39,7 +39,7 @@ export const ui = {
     'cta.button': 'Chat now with Gonzalo Avelar',
     'footer.rights': 'All rights reserved.',
     'whatsapp.message': 'Hello, Lic. Avelar. I saw your website and I would like to receive information about your consultations/conferences. I want to shift to an active position.',
-    'whatsapp.message_architect': 'Hello, Lic. Avelar. I am interested in the program "Be the architect of your own life". I would like more information. 🏛️',
+    'whatsapp.message_architect': 'Hello, Lic. Avelar. I am interested in the program "Be the architect of your own life". I would like more information.',
     'whatsapp.aria_label': 'Chat with Gonzalo Avelar on WhatsApp',
   },
   es: {
@@ -75,7 +75,7 @@ export const ui = {
     'cta.button': 'Chatea ahora con Gonzalo Avelar',
     'footer.rights': 'Todos los derechos reservados.',
     'whatsapp.message': 'Hola, Lic. Avelar. Vi su sitio web y me gustaría recibir información sobre sus consultas/conferencias. Quiero cambiar a una posición activa.',
-    'whatsapp.message_architect': 'Hola, Lic. Avelar. Me interesa el programa "Tú eres el arquitecto de tu propia vida". Me gustaría recibir más información. 🏛️',
+    'whatsapp.message_architect': 'Hola, Lic. Avelar. Me interesa el programa "Sé el arquitecto de tu propia vida". Me gustaría recibir más información.',
     'whatsapp.aria_label': 'Chatea con el Gonzalo Avelar por WhatsApp',
   },
 } as const;

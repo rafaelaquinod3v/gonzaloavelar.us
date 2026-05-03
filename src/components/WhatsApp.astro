@@ -1,12 +1,12 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
-import { ui } from '../i18n/ui';
+import { ui, defaultLang } from '../i18n/ui';
 
 // Replace 000000000000 with the real international number (digits only, no '+').
 export const WHATSAPP_NUMBER = import.meta.env.PUBLIC_WHATSAPP_NUMBER ?? '000000000000';
 
-export function getWhatsAppUrl(lang: keyof typeof ui) {
-  const message = ui[lang]['whatsapp.message'] || ui['en']['whatsapp.message'];
+export function getWhatsAppUrl(lang: keyof typeof ui, messageKey: keyof typeof ui[typeof defaultLang] = 'whatsapp.message') {
+  const message = ui[lang][messageKey] || ui[defaultLang][messageKey];
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 

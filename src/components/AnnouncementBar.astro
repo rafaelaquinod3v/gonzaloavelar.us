@@ -1,8 +1,10 @@
 ---
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getWhatsAppUrl } from './WhatsApp.astro';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const WHATSAPP_URL = getWhatsAppUrl(lang, 'whatsapp.message_architect');
 ---
 
 <div id="announcement-bar" class="fixed top-0 left-0 w-full z-[60] bg-[#1A1A1A] text-white font-sans">
@@ -12,7 +14,9 @@ const t = useTranslations(lang);
       <span class="sm:hidden">{t('announcement.text_mobile')}</span>
     </p>
     <a
-      href="#contact"
+      href={WHATSAPP_URL}
+      target="_blank"
+      rel="noopener noreferrer"
       class="text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 border border-white/30 hover:bg-white hover:text-black transition-colors rounded-full shrink-0"
     >
       {t('announcement.button')}

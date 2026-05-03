@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import gonzalo from '../assets/gonzalo.webp';
-import { getWhatsAppUrl } from './WhatsApp.astro';
+import { getWhatsAppUrl } from '../utils/whatsapp';
 import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
